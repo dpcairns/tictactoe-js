@@ -1,0 +1,49 @@
+function Contact(firstName, lastName, street, city, state, zip, phone){
+  this.firstName = firstName,
+  this.lastName = lastName,
+  this.street = street,
+  this.city = city,
+  this.state = state,
+  this.zip = zip,
+  this.phone = phone
+};
+
+Contact.prototype.alert = function(){
+  alert(this.lastName + ", " + this.firstName + "<br/>" +
+        this.street + "<br/>" +
+        this.city + "<br/>" +
+        this.state + "<br/>" +
+        this.zip + "<br/>" +
+        this.phone
+    )
+}
+
+$(document).ready(function(){
+  $("form#new-contact").submit(function(event){
+    event.preventDefault();
+    
+    var inputtedFirstName = $("input#new-first-name").val();
+    var inputtedLastName = $("input#new-last-name").val();
+    var inputtedStreet = $("input#new-street").val();
+    var inputtedCity = $("input#new-city").val();
+    var inputtedState = $("input#new-state").val();
+    var inputtedZip = $("input#new-zip").val();
+    var inputtedPhone = $("input#new-phone").val();
+    var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedStreet, inputtedCity, inputtedState, inputtedZip, inputtedPhone);
+  
+    $("ul#contacts").append("<li><span class='contact'>" + newContact.lastName + ", " + newContact.firstName + "</span></li>");
+  
+
+    $(".contact").last().click(function(){ //last() binds most recently inserted contact
+      $("#show-contact").show();
+      $(".first-name").text(newContact.firstName);
+      $(".last-name").text(newContact.lastName);
+      $(".street").text(newContact.street);
+      $(".city").text(newContact.city);
+      $(".state").text(newContact.state);
+      $(".zip").text(newContact.zip);
+      $(".phone").text(newContact.phone);
+
+    })
+  });
+});

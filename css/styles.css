@@ -1,0 +1,52 @@
+.spot{
+	height:50px;
+	width: 50px;
+	background-color: #ff6699;
+}
+
+.winner{
+	display: none;
+}
+
+.center {
+	position: fixed;
+	width: 15em;
+	top: 5em;
+	left: 5em;
+}
+
+.sms{
+margin: -1px;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.top{
+border-bottom: solid black 2px;
+}
+
+.mid{
+border-bottom: solid black 2px;
+border-top: solid black 2px;
+
+}
+
+.cent{
+border-right: solid black 2px;
+border-left: solid black 2px;
+}
+
+.bot{
+border-top: solid black 2px;
+
+}
+
+.left{
+border-right: solid black 2px;
+}
+
+.right{
+border-left: solid black 2px;
+}
